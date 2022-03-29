@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body {
+  font-family: "Inter", "Roboto", "Arial", sans-serif;
+  color: white;
+}
+
+.dark {
+  background-color: #1c1c1c;
+  color: #c6c6c6 !important;
+}
+
+input[type="text"] {
+  color: white;
+  font-family: 'Inter';
+  background-color: #282828;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  display: inline-block;
+  width: 83%;
+  margin-bottom: 5px;
+  transition: 0.1s ease-in-out;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 10px #024d7536;
+  transition: 0.3s ease-in-out;
+}
+
+button, input[type="submit"] {
+  color: white;
+  font-family: 'Inter';
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background-color: #024d75;
+  margin: 5px;
+}
+
+button:hover, input[type="submit"]:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+select {
+  color: white;
+  font-family: 'Inter';
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background-color: #282828;
+  margin: 5px;
+  margin-left: 0px;
+  transition: 0.1s ease-in-out;
+}
+
+select:focus {
+  box-shadow: 0 0 10px #024d7536;
+  transition: 0.3s ease-in-out;
+}
+
+
+input[type="date"] {
+  color: white;
+  font-family: 'Inter';
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background-color: #282828;
+  width: 83%;
+  margin: 5px 0px;
+  transition: 0.1s ease-in-out;
+}
+
+input[type="date"]:focus {
+  box-shadow: 0 0 10px #024d7536;
+  transition: 0.3s ease-in-out;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.blink {
+  -webkit-animation:shine 1s ease-in-out;
+  animation:shine 1s ease-in-out;  
+}
+
+@-webkit-keyframes shine {
+  0% {box-shadow: 0 0 0px #024d758e;}
+  50% {box-shadow: 0 0 10px #024d758e;}
+  100% {box-shadow: 0 0 0px #024d758e;}
+}
+
+@keyframes shine {
+  0% {box-shadow: 0 0 0px #024d758e;}
+  50% {box-shadow: 0 0 10px #024d758e;}
+  100% {box-shadow: 0 0 0px #024d758e;}
+}
+
+a:link,
+a:visited {
+  color: #60bfeb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:link:active,
+a:visited:active,
+a:hover {
+  color: #89d0f0;
+  cursor: pointer;
+}
