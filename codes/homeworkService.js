@@ -21,8 +21,8 @@ function addHomework () {
 
   fetch("https://api.todoist.com/rest/v1/tasks", requestOptions)
     .then(response => response.text())
-    .then(result => referenceElement.insertAdjacentHTML('afterend', `<div onclick="window.location.reload()" class="goodWarning"><ion-icon name="checkmark-circle"></ion-icon>Adicionado com sucesso!</div>`))
-    .catch(error => referenceElement.insertAdjacentHTML('afterend', `<div onclick="window.location.reload()" class="badWarning"><ion-icon name="alert"></ion-icon><p style="margin: 0px !important;">Eita. Deu erro. ${error}</p></div>`));
+    .then(result => referenceElement.insertAdjacentHTML('afterend', `<div ontouchstart="window.location.reload()" onclick="window.location.reload()" class="goodWarning"><ion-icon name="checkmark-circle"></ion-icon>Adicionado com sucesso!</div>`))
+    .catch(error => referenceElement.insertAdjacentHTML('afterend', `<div ontouchstart="window.location.reload()" onclick="window.location.reload()" class="badWarning"><ion-icon name="alert"></ion-icon><p style="margin: 0px !important;">Eita. Deu erro. ${error}</p></div>`));
 }
 
 function addToken () {
