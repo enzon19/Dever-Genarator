@@ -14,6 +14,3 @@ function updateJSONResultBox (result) {
   result.innerHTML = result.innerHTML.replace(/[<]br[/]?[>]/gi,"\n");
   window.Prism.highlightAll();
 }
-
-window.updateJSONResultBox = updateJSONResultBox;
-window.capitalize = capitalize;
