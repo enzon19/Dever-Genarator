@@ -50,7 +50,7 @@ taskInput.onkeyup = function () {
 
 function checkText (text) {
   //Fix letters and accents on input
-  const changeSubjects = {"Liv": "LIV", "Portugues": "Português", "Fisica": "Física", "Historia": "História", "Matematica": "Matemática", "Ingles": "Inglês", "Quimica": "Química", "Producao": "Produção", "Produçao": "Produção", "Producão": "Produção", "Capitulo": "Capítulo"};
+  const changeSubjects = {"Np": "NP", "Liv": "LIV", "Portugues": "Português", "Fisica": "Física", "Historia": "História", "Matematica": "Matemática", "Ingles": "Inglês", "Quimica": "Química", "Producao": "Produção", "Produçao": "Produção", "Producão": "Produção", "Capitulo": "Capítulo"};
   taskInput.value = window.capitalize(text.replace(/ ?(.*)/, "$1"), null, changeSubjects);
 
   //Check for subjects on input and then select
