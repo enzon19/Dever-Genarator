@@ -8,5 +8,10 @@ This project is a personal project to create tasks in Todoist based on my school
 - It's in portuguese.
 - The design is based for my phone screen, I hate CSS sizing!
 
+# Plans
+- Remake CSS sizing, using grid display.
+- Make code better and more integraded to JSON files and Todoist IDs.
+- Teach how to "upload" your JSON files and apply changes.
+
 # How it works?
 Basically, you enter some text about your homework (eg.: Math Chapter 1) and the code will detect the label ID for the subject in Todoist and the next class (due date in Todoist, but it's one day before). After, a request will be made to Todoist server to create the task.
