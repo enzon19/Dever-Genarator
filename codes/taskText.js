@@ -54,13 +54,21 @@ taskInput.onkeyup = function () {
 }
 
 function checkText (text) {
+  const newLength = taskInput.value.match(/ /g)?.length;
+  console.log(taskInput.value.match(/ /g), wordsLength != newLength, wordsLength, newLength)
 
-  if (wordsLength != taskInput.value.split(' ').length - 1) {
+  if (wordsLength != newLength) {
     //Fix letters and accents on input
     const changeSubjects = {"Np": "NP", "Liv": "LIV", "Portugues": "Português", "Fisica": "Física", "Historia": "História", "Matematica": "Matemática", "Ingles": "Inglês", "Quimica": "Química", "Producao": "Produção", "Produçao": "Produção", "Producão": "Produção", "Capitulo": "Capítulo"};
-    taskInput.value = window.capitalize(text.replace(/ ?(.*)/, "$1"), null, changeSubjects);
+    let lastChar = "";
 
-    wordsLength = taskInput.value.split(' ').length;
+    if (text.slice(-1) == " ") {
+      text = text.slice(0, -1);
+      lastChar = " ";
+    }
+    taskInput.value = window.capitalize(text, null, changeSubjects) + lastChar;
+
+    wordsLength = newLength;
   };
 
   //Check for subjects on input and then select
