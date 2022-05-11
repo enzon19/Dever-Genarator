@@ -37,6 +37,7 @@ const aboutBooks = [
     "comments": "Apostila Humanas, Caderno Itinerários, Caderno LIV, Caderno Cinza (Produção de Texto)"
   }
 ];
+let wordsLength = 0;
 
 function nextDate(dayIndex) {
   let today = new Date();
@@ -44,14 +45,23 @@ function nextDate(dayIndex) {
   return today;
 }
 
+taskInput.onfocusout = function () {
+  checkText(this.value);
+}
+
 taskInput.onkeyup = function () {
   checkText(this.value);
 }
 
 function checkText (text) {
-  //Fix letters and accents on input
-  const changeSubjects = {"Np": "NP", "Liv": "LIV", "Portugues": "Português", "Fisica": "Física", "Historia": "História", "Matematica": "Matemática", "Ingles": "Inglês", "Quimica": "Química", "Producao": "Produção", "Produçao": "Produção", "Producão": "Produção", "Capitulo": "Capítulo", "D": "D", "Dde ": "de "};
-  taskInput.value = window.capitalize(text.replace(/ ?(.*)/, "$1"), null, changeSubjects);
+
+  if (wordsLength != taskInput.value.split(' ').length) {
+    //Fix letters and accents on input
+    const changeSubjects = {"Np": "NP", "Liv": "LIV", "Portugues": "Português", "Fisica": "Física", "Historia": "História", "Matematica": "Matemática", "Ingles": "Inglês", "Quimica": "Química", "Producao": "Produção", "Produçao": "Produção", "Producão": "Produção", "Capitulo": "Capítulo"};
+    taskInput.value = window.capitalize(text.replace(/ ?(.*)/, "$1"), null, changeSubjects);
+
+    wordsLength = taskInput.value.split(' ').length;
+  };
 
   //Check for subjects on input and then select
   checkDropdown(["biologia","filosofia","física","geografia","história","inglês","liv","literatura","matemática 1","matemática 2","matemática financeira","pensadores do futuro","português","produção de texto","química","sociologia"], "subjects");
