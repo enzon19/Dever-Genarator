@@ -5,6 +5,7 @@ function removeIfExists () {
 }
 
 function addHomework () {
+  window.checkText(taskInput.value);
   let myHeaders = new Headers();
   myHeaders.append("Authorization", "Bearer " + document.cookie.split("=")[1]);
   myHeaders.append("Content-Type", "application/json");
