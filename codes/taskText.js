@@ -4,37 +4,37 @@ const aboutBooks = [
   {
     "day": "Mon",
     "dayBefore": "Sun",
-    "materials": [5617257398, 5617259573, 5617268645, 5617268269, 5617215013, 5617208397, 5617188622],
-    "subjects": [2159895182, 2159895113, 2159882340, 2159895118, 2159895111],
-    "comments": "Apostila Exatas, Apostila Humanas, Apostila Sociologia, Apostila Inglês, Caderno Azul (História), Caderno Cinza (Inglês e Sociologia), Caderno Laranja (Matemáticas)"
+    "materials": [5617259573, 5617268269, 5617255300, 5617215013, 5617208397, 5617218404],
+    "subjects": [2159895182, 2159895119, 2159895113, 2159895187, 2159876373],
+    "comments": "Apostila de Humanas, Apostila de Inglês, Material de LIV, Caderno Azul (História), Caderno Cinza (Inglês e Produção de Texto), Caderno Verde (Português)"
   },
   {
     "day": "Tue",
     "dayBefore": "Mon",
     "materials": [5617257398, 5617259573, 5617218404, 5617188622],
-    "subjects": [2159895112, 2159895181, 2159876373, 2159882340],
-    "comments": "Apostila Exatas, Apostila Humanas, Caderno Verde (Física, Geografia, Português), Caderno Laranja (Matemática 2)"
+    "subjects": [2159895181, 2159876373, 2159882340],
+    "comments": "Apostila de Exatas, Apostila de Humanas, Caderno Verde (Geografia, Português), Caderno Laranja (Matemática 2)"
   },
   {
     "day": "Wed",
     "dayBefore": "Tue",
-    "materials": [5617257398, 5617259573, 5617268902, 5617215013, 5617218404],
-    "subjects": [2159893392, 2159895182, 2159895180, 2159895112, 2159895115],
-    "comments": "Apostila Exatas, Apostila Humanas, Apostila Filosofia, Caderno Azul (Química, História, Biologia), Caderno Verde (Física, Filosofia)"
+    "materials": [5617257398, 5617215013, 5617218404, 5617188622],
+    "subjects": [2159893392, 2159895182, 2159895180, 2159895112, 2159895111],
+    "comments": "Apostila de Exatas, Caderno Azul (Química, História, Biologia), Caderno Verde (Física), Caderno Laranja (Matemática 1)"
   },
   {
     "day": "Thu",
     "dayBefore": "Wed",
-    "materials": [5617257398, 5617259573, 5617215013, 5617218404, 5617254955],
-    "subjects": [2159895184, 2159895180, 2159876373, 2159895193],
-    "comments": "Apostila Exatas, Apostila Humanas, Caderno Azul (Literatura, Biologia), Caderno Verde (Português), Caderno Itinerários"
+    "materials": [5617257398, 5617259573, 5617254955, 5617268645, 5617215013, 5617218404],
+    "subjects": [2159895184, 2159895180, 2159895112, 2159895118, 2159895193],
+    "comments": "Apostila de Exatas, Apostila de Humanas, Apostila de Linguagem Matemática, Apostila de Sociologia, Caderno Azul (Literatura, Biologia), Caderno Verde (Física)"
   },
   {
     "day": "Fri",
     "dayBefore": "Thu",
-    "materials": [5617259573, 5617254955, 5617255300, 5617208397],
-    "subjects": [2159895119, 2159895187, 2159895194],
-    "comments": "Apostila Humanas, Caderno Itinerários, Caderno LIV, Caderno Cinza (Produção de Texto)"
+    "materials": [5617257398, 5617259573, 5752738321, 5617268902, 5617255300, 5617208397, 5617188622],
+    "subjects": [2159895187, 2159895115, 2159895119, 2159895111, 2159895194],
+    "comments": "Apostila de Exatas, Apostila de Humanas, Apostila de Eco Maker, Apostila de Filosofia, Material de LIV, Caderno Cinza (Produção de Texto e Filosofia), Caderno Laranja (Matemática 1)"
   }
 ];
 let wordsLength = 0;
