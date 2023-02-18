@@ -5,6 +5,7 @@
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 /package
+/build
 
 # Logs
 logs
