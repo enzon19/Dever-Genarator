@@ -21,7 +21,8 @@ export default {
   exercisesTypes: [
 		{ value: 'iniciais', name: 'Iniciais' },
 		{ value: 'contextualizados', name: 'Contextualizados' },
-		{ value: 'capítulo', name: 'Capítulo' }
+		{ value: 'capítulo', name: 'Capítulo' },
+		{ value: 'np', name: 'NP' }
 	],
 	fixSubjectsNames: {
 		"Np": "NP", 
@@ -66,6 +67,7 @@ export default {
 		}
 	],
 	dueDateOneDayBefore: true,
+	time: "15:00",
 	projectID: "2285518194",
 	sectionID: "80559957"
 }

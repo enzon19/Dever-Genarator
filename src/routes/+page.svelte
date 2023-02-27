@@ -13,7 +13,7 @@
 </script>
 
 <h2 class="text-2xl font-bold text-center px-4 pt-4">Gerador de Dever</h2>
-<p class="text-center text-sm mb-4">v2.0.0 • Feito por enzon19</p>
+<p class="text-center text-sm mb-4">v2.0.1 • Feito por enzon19</p>
 <form class="text-center flex flex-col m-2 gap-2 flex-wrap">
   <HomeworkNameInput bind:inputs bind:homeworkName name="task" placeholder="Nome do dever"></HomeworkNameInput>
   <div class="flex gap-2">

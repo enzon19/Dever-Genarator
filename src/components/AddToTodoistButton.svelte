@@ -11,13 +11,19 @@
   async function addToTodoist() {
     const token = getCookie('token');
     if (!homeworkName || !token) throw `Eita. Deu erro. Verifique o token e os campos.`;
+    
+
     const subjectName = settings.subjects.find(subject => subject.todoistID == subjectID)?.name.replace(/ /g, "_") || "";
+
+    const isNoDate = dueDate.hour() == 0 && dueDate.minute() == 0 && dueDate.second() == 0 && dueDate.millisecond() == 0;
+    const date = isNoDate ? { due_date: dueDate.format('yyyy-MM-DD') } : { due_datetime: dueDate.format('YYYY-MM-DDTHH:mm:ss.X') };
+
     const apiObject = {
       content: homeworkName,
       project_id: settings.projectID,
       section_id: settings.sectionID,
       labels: [subjectName],
-      due_date: dueDate
+      ...date
     };
 
     let myHeaders = new Headers();

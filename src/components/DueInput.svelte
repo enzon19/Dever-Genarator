@@ -4,6 +4,7 @@
 
 	export let subject = "";
   export let value = "";
+  let valueInput = "";
   const schedule = settings.classSchedule;
   const todayWeekdayIndex = moment().format('d');
 
@@ -22,11 +23,22 @@
     );
   }
   
-  // adaptado do StackOverFlow
   function getNextDateBasedOnWeekdayIndex(dayIndex) {
     let today = moment();
+    
+    // adaptado do StackOverFlow
     today.add((dayIndex - 1 - today.day() + 7) % 7 + 1, 'days');
-    return today.format('yyyy-MM-DD');
+
+    // Settings
+    if (settings.dueDateOneDayBefore) today.subtract(1, 'd');
+    const settingsTime = moment(settings.time, 'HH:mm', true);
+    if (settingsTime.isValid()) {
+      today.set({ hour: settingsTime.hours(), minute: settingsTime.minutes(), second: '01' });
+    } else {
+      today.startOf('day');
+    }
+
+    return today;
   }
 
   // adaptado do ChatGPT
@@ -53,10 +65,11 @@
   }
 
   $: if (subject) value = getNextDateBasedOnWeekdayIndex(findClosestDay(schedule.filter(day => day.subjectsIDs.includes(subject)), todayWeekdayIndex).dayOfWeek);
-  $: if (value) triggerShine(selectElement);
+  $: if (value) valueInput = value.format('yyyy-MM-DD');
+  $: if (valueInput) triggerShine(selectElement);
 </script>
 
-<input class="py-1.5 px-2 bg-input-grey text-base rounded-xl focus:outline-none focus:shadow-md focus:shadow-shadow-blue focus:transition-shadow transition-shadow invalid:text-placeholder w-full" type="date" name="due" bind:this={selectElement} bind:value required>
+<input class="py-1.5 px-2 bg-input-grey text-base rounded-xl focus:outline-none focus:shadow-md focus:shadow-shadow-blue focus:transition-shadow transition-shadow invalid:text-placeholder w-full" type="date" name="due" bind:this={selectElement} bind:value={valueInput} required>
 
 <style lang="postcss">
   input[type=date]::-webkit-calendar-picker-indicator {
