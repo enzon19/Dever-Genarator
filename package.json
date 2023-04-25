@@ -1,6 +1,6 @@
 {
 	"name": "dever-generator",
-	"version": "2.0.0",
+	"version": "2.0.2",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
@@ -9,7 +9,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^1.0.0",
-		"@sveltejs/adapter-static": "^2.0.1",
+		"@sveltejs/adapter-static": "^2.0.2",
 		"@sveltejs/kit": "^1.0.0",
 		"autoprefixer": "^10.4.13",
 		"postcss": "^8.4.21",

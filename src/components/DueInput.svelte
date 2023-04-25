@@ -3,8 +3,7 @@
   import moment, * as moments from 'moment';
 
 	export let subject = "";
-  export let value = "";
-  let valueInput = "";
+  export let valueInput = "";
   const schedule = settings.classSchedule;
   const todayWeekdayIndex = moment().format('d');
 
@@ -31,13 +30,6 @@
 
     // Settings
     if (settings.dueDateOneDayBefore) today.subtract(1, 'd');
-    const settingsTime = moment(settings.time, 'HH:mm', true);
-    if (settingsTime.isValid()) {
-      today.set({ hour: settingsTime.hours(), minute: settingsTime.minutes(), second: '01' });
-    } else {
-      today.startOf('day');
-    }
-
     return today;
   }
 
@@ -64,9 +56,11 @@
     }
   }
 
-  $: if (subject) value = getNextDateBasedOnWeekdayIndex(findClosestDay(schedule.filter(day => day.subjectsIDs.includes(subject)), todayWeekdayIndex).dayOfWeek);
-  $: if (value) valueInput = value.format('yyyy-MM-DD');
+  $: if (subject) {
+    valueInput = getNextDateBasedOnWeekdayIndex(findClosestDay(schedule.filter(day => day.subjectsIDs.includes(subject)), todayWeekdayIndex).dayOfWeek).format('yyyy-MM-DD');
+  };
   $: if (valueInput) triggerShine(selectElement);
+  
 </script>
 
 <input class="py-1.5 px-2 bg-input-grey text-base rounded-xl focus:outline-none focus:shadow-md focus:shadow-shadow-blue focus:transition-shadow transition-shadow invalid:text-placeholder w-full" type="date" name="due" bind:this={selectElement} bind:value={valueInput} required>

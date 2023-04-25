@@ -3,6 +3,7 @@
   import IoIosCheckmarkCircle from 'svelte-icons/io/IoIosCheckmarkCircle.svelte'
   import IoIosWarning from 'svelte-icons/io/IoIosWarning.svelte';
   import { getCookie } from 'svelte-cookie';
+  import moment from 'moment';
 
   export let homeworkName, subjectID, dueDate;
   let todoistAnswer = new Promise((resolve, reject) => {});
@@ -12,11 +13,19 @@
     const token = getCookie('token');
     if (!homeworkName || !token) throw `Eita. Deu erro. Verifique o token e os campos.`;
     
-
     const subjectName = settings.subjects.find(subject => subject.todoistID == subjectID)?.name.replace(/ /g, "_") || "";
 
-    const isNoDate = dueDate.hour() == 0 && dueDate.minute() == 0 && dueDate.second() == 0 && dueDate.millisecond() == 0;
-    const date = isNoDate ? { due_date: dueDate.format('yyyy-MM-DD') } : { due_datetime: dueDate.format('YYYY-MM-DDTHH:mm:ss.X') };
+    dueDate = moment(dueDate);
+    const settingsTime = moment(settings.time, 'HH:mm', true);
+    const haveTime = settingsTime.isValid();
+    if (haveTime) {
+      dueDate.set({ hour: settingsTime.hours(), minute: settingsTime.minutes(), second: '01' });
+    } else {
+      dueDate.startOf('day');
+    }
+
+    console.log(haveTime, settingsTime)
+    const date = !haveTime ? { due_date: dueDate.format('yyyy-MM-DD') } : { due_datetime: dueDate.format('YYYY-MM-DDTHH:mm:ss.X') };
 
     const apiObject = {
       content: homeworkName,
